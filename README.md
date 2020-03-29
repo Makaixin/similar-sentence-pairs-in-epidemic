@@ -20,6 +20,7 @@
 ## 方案简介
 
 ###最终方案
+
 本方案预训练采用[roberta_wwm_ext_large](https://github.com/ymcui/Chinese-BERT-wwm)
 
 首先将query1,query2作为句对传入到robert中。
@@ -34,6 +35,8 @@
 采用投票方式，并将所有概率求平均后再次投票。公式如下：
 
 vote = ∑argmax(p) + argmax(∑p) * len / 2
+
+由于比赛里写了不鼓励通过多模提高比赛成绩，故没有进行多模融合
 
 剩下的就是玄学调参
 
